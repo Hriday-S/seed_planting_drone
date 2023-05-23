@@ -50,6 +50,9 @@ battery.grid(row = 4, column = 5)
 canvas = tk.Canvas(window, width = 960/2, height = 720/2)
 canvas.grid(row = 5, column = 0)
 
+scaleSlider = tk.Scale(window, from_=0, to=100)
+scaleSlider.grid(row = 1, column = 6)
+
 def update_video():
     while True:
         frame = cv2.resize(tello.get_frame_read().frame, (580, 360))
@@ -58,12 +61,15 @@ def update_video():
         hue_channel = framehsv[:,:, 0]
         saturation_channel = framehsv[:,:, 1]
         value_channel = framehsv[:,:, 2]
+        #35, 75
+        hue_min = 35
+        hue_max = 75
 
-        hue_min = 60
-        hue_max = 110
+        value_min = 20
+        value_max = 60
 
 
-        mask = (hue_channel < hue_max) & (hue_channel > hue_min)
+        mask = ((hue_channel < hue_max) & (hue_channel > hue_min)) | ((value_channel < value_max) & (value_channel > value_min))
         
         filtered_image = np.zeros_like(frame)
         filtered_image[mask] = frame[mask]
