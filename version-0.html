@@ -82,10 +82,34 @@
           </div>
 
           <div class="col-sm-10">
-            <h3></h3>
+            <h3>As a simple method to get started with green detection, average color was used.</h3>
+            <h3>This program cause the drone to go in a specified pattern, taking pictures at each position. At each of these positions, a photo would be taken. The "green differerntial" was outputted. The green differential was an average of g/r and g/b of the rgb values of all the pixels in the image.</h3>
+            <h3>This is not a good method since it takes in the whole image as one, instead of filtering parts of each image, but it was useful to learn this to be able to move onto a better method of analysis.</h3>
+            <h3>Image stitching is done at the end of the code and is exported as a file once the program was done.</h3>
           </div>
         </div>
       </div>
+</div>
+
+<div class="jumbotron text-left">
+  <h1 style = "padding-bottom: 20px">RGB Ratio Analysis</h1>
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <img src = "images/rgb-testing.png">
+        </div>
+        <div class="col-sm-4">
+          <img src = "images/rgb-testing-binarized.png">
+        </div>
+        <div class="col-sm-4">
+          <h3>The image on the left, binarizes the image to it's left based on green:red ratios.</h3>
+          <h3>Since the program is supposed to differentiate healthy and unhealthy grass, I created a comparision between "g" in RGB and "r" and "b". If "g" was 1.5 times higher han both "b" and "r", the area would be white, meaning that it passed the test. Black areas were filtered out.  </h3>
+          <h3>As can be seen, it did work to an extent,  but is still not perfect. Additionally, "grass" areas should be kept as the original colors in the file, not white.</h3>
+          <h3>Note - all drone movement was removed until the implementation of tkinter since these developments revolve around image processing rather than performing patterns.</h3>
+        </div>
+        
+      </div>
+    </div>
 </div>
 </body>
 </html>
