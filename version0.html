@@ -93,7 +93,7 @@
 </div>
 
 <div class="jumbotron text-left">
-  <h1 style = "padding-bottom: 20px">RGB Ratio Analysis</h1>
+  <h1 style = "padding-bottom: 20px">RGB Pixel Ratio Analysis</h1>
   <div class="container">
       <div class="row">
         <div class="col-sm-4">
@@ -112,5 +112,46 @@
       </div>
     </div>
 </div>
+
+<div class="jumbotron text-left">
+  <h1 style = "padding-bottom: 20px">HSV Pixel Range Analysis</h1>
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <img src = "images/hsv-testing.png">
+        </div>
+        <div class="col-sm-4">
+          <img src = "images/hsv-testing-filtered.png">
+        </div>
+        <div class="col-sm-4">
+          <h3>After conducting some research, it was found out that the best way to approach this, in a color comparision method, would be to use HSV.</h3>
+          <h3>HSV is better than rgb in this scenario since hues can be more easily differentiated.</h3>
+          <h3>In this version, a mask was only applied on the pixels that did not meet the "green" criteria and other pixels were directly mapped from the original image.</h3>
+          <h3>This was a significant improvement from the previous iteration.</h3>
+          <h3>(Although this image does not show this), the data became smoother when using the value parameter. This was used to filter out white light that was being registered as a green hue. Future images will reflect this.</h3>
+        </div>
+        
+      </div>
+    </div>
+</div>
+
+<div class="jumbotron text-left">
+  <h1 style = "padding-bottom: 20px">Drone Controls</h1>
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <img src = "images/tkinter-ui.png">
+        </div>
+
+        <div class="col-sm-6">
+          <h3>Image processing is great, but a drone is no use without having the ability to bird. Tkinter was used to give the drone birding features through a controller window using tkinter.</h3>
+          <h3>Using tkinter, buttons were created. The video stream was added to the tkinter UI.</h3>   
+          <h3>Pillow (PIL) was used to convert formats from cv2 to tkinter displayable video.</h3>       
+        </div>
+        
+      </div>
+    </div>
+</div>
+
 </body>
 </html>
